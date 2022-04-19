@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='custom.css') }}">
+    <title>Simple Form</title>
+
+</head>
+<body>
+
+<h1 style="text-align: center;color: crimson;font-size: 25px;">Simple Registration form</h1>
+{% for message in form.name.errors %}
+<div>{{ message }}</div>
+{% endfor %}
+
+{% for message in form.PhoneNumber.errors %}
+<div>{{ message }}</div>
+{% endfor %}
+
+{% for message in form.Password.errors %}
+<div>{{ message }}</div>
+{% endfor %}
+
+<form action="http://localhost:5000/registrationform" method="post">
+    {{ form.hidden_tag }}
+
+<div class="table-section">
+    <table>
+        <tr>
+            <td>{{ form.name.label }}</td>
+            <td>{{ form.name }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.Password.label }}</td>
+            <td>{{ form.Password }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.PhoneNumber.label }}</td>
+            <td>{{ form.PhoneNumber }}</td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>{{ form.gender(class='gender-options') }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.address.label }}</td>
+            <td>{{ form.address }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.age.label }}</td>
+            <td>{{ form.age }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>{{ form.submit(class='anchor-button') }}</td>
+        </tr>
+    </table>
+</div>
+</form>
+</body>
+</html>

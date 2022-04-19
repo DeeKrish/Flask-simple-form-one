@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='custom.css')}}">
+
+    <title>Simple form</title>
+</head>
+<body>
+<form action="http://localhost:5000/successform" method="post"></form>
+<h1 style="text-align: center;color: blueviolet;font-size: 30px;">Welcome {{ session['name'] }} !! Registration completed successfully</h1>
+<div class="header-menu-section">
+    <p><a class="'anchor-button" href="{{ url_for('home') }}"><strong>Home</strong></a></p>
+    <p><a class="'anchor-button" href="{{ url_for('login') }}"><strong>Login</strong></a></p>
+</div>
+</body>
+</html>
